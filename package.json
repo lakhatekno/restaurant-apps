@@ -8,7 +8,7 @@
     "build": "webpack --config webpack.prod.js",
     "test": "karma start",
     "lint": "eslint ./src",
-    "build image": "node sharp.js",
+    "build-image": "node sharp.js",
     "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
