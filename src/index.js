@@ -18,10 +18,10 @@ const renderPage = async () => {
   await page.afterRender();
 };
 
-window.onload = () => {
+window.addEventListener('load', () => {
   renderPage();
   swRegister();
-};
+});
 
 window.addEventListener('hashchange', async () => {
   renderPage();

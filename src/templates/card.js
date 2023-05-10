@@ -13,7 +13,7 @@ class Card extends HTMLElement {
 
       this.innerHTML = `
         <div class="img">
-          <img class="lazyload" src="${pictureUrl+img}" alt="${name}">
+          <img class="lazyload" data-src="${pictureUrl + img}" alt="${name}">
         </div>
         <div class="text-field">
           <a href="/#/detail/${id}" aria-label="ke detail ${name}"><h3 tabindex="0">${name}</h3></a>

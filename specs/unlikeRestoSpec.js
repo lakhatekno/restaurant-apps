@@ -1,7 +1,7 @@
 import LikeButtonInitiator from '../src/utils/like-button-initiator';
 import FavoriteResto from '../src/data/favorit-resto';
 
-describe('Unliking A Movie', () => {
+describe('remove from favorite', () => {
   const addLikeButtonContainer = () => {
     document.body.innerHTML = '<div id="like_button"></div>';
   };
@@ -15,7 +15,7 @@ describe('Unliking A Movie', () => {
     await FavoriteResto.deleteResto(1);
   });
 
-  it('should display unlike widget when the movie has been liked', async () => {
+  it('should display unlike widget when the resto has been liked', async () => {
     await LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#like_button'),
       resto: {
@@ -26,7 +26,7 @@ describe('Unliking A Movie', () => {
       .toBeTruthy();
   });
 
-  it('should not display like widget when the movie has been liked', async () => {
+  it('should not display like widget when the resto has been liked', async () => {
     await LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#like_button'),
       resto: {
@@ -37,7 +37,7 @@ describe('Unliking A Movie', () => {
       .toBeFalsy();
   });
 
-  it('should be able to remove liked movie from the list', async () => {
+  it('should be able to remove liked resto from the list', async () => {
     await LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#like_button'),
       resto: {
@@ -48,7 +48,7 @@ describe('Unliking A Movie', () => {
     expect(await FavoriteResto.getAllResto()).toEqual([]);
   });
 
-  it('should not throw error if the unliked movie is not in the list', async () => {
+  it('should not throw error if the unliked resto is not in the list', async () => {
     await LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#like_button'),
       resto: {
